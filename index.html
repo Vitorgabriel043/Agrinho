@@ -2,107 +2,72 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgroTelemetry Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <link rel="stylesheet" href="reset.css" />
-  <link rel="stylesheet" href="style.css" />
+  <title>Telemetria Agrícola</title>
+
+  <!-- RESET -->
+  <link rel="stylesheet" href="reset.css">
+
+  <!-- STYLE -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- CHART -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-  <header class="topbar">
+  <header class="header">
+
     <div class="logo">
-      🌾 AgroTelemetry
+      <span>🚜</span>
+      <h1>Telemetria Agrícola</h1>
     </div>
 
-    <nav>
-      <a href="#">Dashboard</a>
-      <a href="#">Máquinas</a>
-      <a href="#">Sensores</a>
-      <a href="#">Relatórios</a>
-    </nav>
+    <div class="date" id="date"></div>
+
   </header>
 
-  <main class="container">
+  <main class="dashboard">
 
-    <section class="hero">
-      <div>
-        <h1>Telemetria de Máquinas Agrícolas</h1>
-        <p>
-          Monitoramento em tempo real de tratores, colheitadeiras
-          e implementos agrícolas.
-        </p>
-      </div>
-
-      <button id="updateBtn">
-        Atualizar Dados
-      </button>
+    <section class="card">
+      <h2>Velocidade</h2>
+      <div class="value" id="speed">0 km/h</div>
+      <p>Status operacional</p>
     </section>
 
-    <section class="cards">
-
-      <div class="card">
-        <h2>🚜 Tratores Online</h2>
-        <span id="tractors">12</span>
-      </div>
-
-      <div class="card">
-        <h2>⛽ Consumo Médio</h2>
-        <span id="fuel">18 L/h</span>
-      </div>
-
-      <div class="card">
-        <h2>🌡 Temperatura Motor</h2>
-        <span id="temp">76°C</span>
-      </div>
-
-      <div class="card">
-        <h2>📍 Área Coberta</h2>
-        <span id="area">245 ha</span>
-      </div>
-
+    <section class="card">
+      <h2>Combustível</h2>
+      <div class="value" id="fuel">0%</div>
+      <p>Monitoramento ativo</p>
     </section>
 
-    <section class="table-section">
-      <h2>Status das Máquinas</h2>
+    <section class="card">
+      <h2>Temperatura</h2>
+      <div class="value" id="temp">0°C</div>
+      <p>Motor supervisionado</p>
+    </section>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Máquina</th>
-            <th>Status</th>
-            <th>Velocidade</th>
-            <th>Combustível</th>
-          </tr>
-        </thead>
-
-        <tbody id="machineTable">
-          <tr>
-            <td>Trator JD-8400</td>
-            <td class="online">Online</td>
-            <td>18 km/h</td>
-            <td>74%</td>
-          </tr>
-
-          <tr>
-            <td>Colheitadeira CR-7.90</td>
-            <td class="offline">Offline</td>
-            <td>0 km/h</td>
-            <td>41%</td>
-          </tr>
-
-          <tr>
-            <td>Pulverizador Uniport</td>
-            <td class="online">Online</td>
-            <td>12 km/h</td>
-            <td>63%</td>
-          </tr>
-        </tbody>
-      </table>
+    <section class="card">
+      <h2>Área Trabalhada</h2>
+      <div class="value" id="area">0 ha</div>
+      <p>Produção em andamento</p>
     </section>
 
   </main>
 
+  <section class="chart-container">
+    <h2>📈 Histórico de Velocidade</h2>
+
+    <canvas id="chart"></canvas>
+  </section>
+
+  <footer class="footer">
+    Sistema Inteligente de Máquinas Agrícolas
+  </footer>
+
   <script src="main.js"></script>
+
 </body>
 </html>
