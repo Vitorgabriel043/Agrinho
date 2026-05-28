@@ -1,13 +1,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroTelemetry Dashboard</title>
+
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<script src="main.js"></script>    
+
+  <header class="topbar">
+    <div class="logo">
+      🌾 AgroTelemetry
+    </div>
+
+    <nav>
+      <a href="#">Dashboard</a>
+      <a href="#">Máquinas</a>
+      <a href="#">Sensores</a>
+      <a href="#">Relatórios</a>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div>
+        <h1>Telemetria de Máquinas Agrícolas</h1>
+        <p>
+          Monitoramento em tempo real de tratores, colheitadeiras
+          e implementos agrícolas.
+        </p>
+      </div>
+
+      <button id="updateBtn">
+        Atualizar Dados
+      </button>
+    </section>
+
+    <section class="cards">
+
+      <div class="card">
+        <h2>🚜 Tratores Online</h2>
+        <span id="tractors">12</span>
+      </div>
+
+      <div class="card">
+        <h2>⛽ Consumo Médio</h2>
+        <span id="fuel">18 L/h</span>
+      </div>
+
+      <div class="card">
+        <h2>🌡 Temperatura Motor</h2>
+        <span id="temp">76°C</span>
+      </div>
+
+      <div class="card">
+        <h2>📍 Área Coberta</h2>
+        <span id="area">245 ha</span>
+      </div>
+
+    </section>
+
+    <section class="table-section">
+      <h2>Status das Máquinas</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Máquina</th>
+            <th>Status</th>
+            <th>Velocidade</th>
+            <th>Combustível</th>
+          </tr>
+        </thead>
+
+        <tbody id="machineTable">
+          <tr>
+            <td>Trator JD-8400</td>
+            <td class="online">Online</td>
+            <td>18 km/h</td>
+            <td>74%</td>
+          </tr>
+
+          <tr>
+            <td>Colheitadeira CR-7.90</td>
+            <td class="offline">Offline</td>
+            <td>0 km/h</td>
+            <td>41%</td>
+          </tr>
+
+          <tr>
+            <td>Pulverizador Uniport</td>
+            <td class="online">Online</td>
+            <td>12 km/h</td>
+            <td>63%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <script src="main.js"></script>
 </body>
 </html>
